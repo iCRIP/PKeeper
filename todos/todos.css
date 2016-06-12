@@ -1,0 +1,419 @@
+/* CSS declarations go here */
+body{
+	background:#edf2f6;
+}
+.top-bar {
+    height: 60px;
+    width: 100%;
+    background: #edf2f6;
+    color: #4e5a68;
+    font-size: 24px;
+    line-height: 60px;
+    padding-left: 90px;
+}
+.glyphicon{
+	cursor:pointer;
+}
+.left-bar{
+	position: fixed;
+	left:0;
+	top:0;
+	height:100%;
+	width:60px;
+	background:#354052;
+	padding-top:60px;
+}
+.navigation{
+	padding:0;
+	margin:0;
+	list-style:none;
+}
+.navigation li{
+	text-align: center;
+}
+.navigation li a{
+	line-height: 60px;
+    font-size: 30px;
+    color: #abb6c8;
+    display: block;
+}
+.navigation li a:hover, .navigation li a.active,.navigation li a:focus{
+    background: #30394a;
+    text-decoration: none;
+    border-left: 3px solid #29b3fb;
+    color: #f6fafd;
+}
+.center-bar {
+    padding: 0 30px;
+    position: fixed;
+    left: 60px;
+    right: 70%;
+    bottom: 0;
+    top: 60px;
+    background: #edf2f6;
+    box-shadow: inset 0 0 22px 0px #c1c5c7;
+}
+.lists-block h2{
+	font-size: 24px;
+	margin:15px 0;
+	line-height:30px;
+	color:#4e5a68;
+}
+.lists-block .add-list-form{}
+.lists-block .add-list-form form{
+	margin:0;
+}
+.lists-block .add-list-form form input[type="text"]{
+	height:30px;
+	line-height: 30px;
+	font-size: 16px;
+	min-width:175px;
+	width:175px;
+}
+.lists-block .add-list-form form input[type="submit"]{
+    height: 30px;
+    line-height: 25px;
+    vertical-align: top;
+    background: #f8f9fb;
+    border: 1px solid #dfe4e8;
+    border-radius: 8px;
+    padding: 0 15px;
+    margin-left: 13px;
+    font-weight: bold;
+    color: #4e5e6c;
+}
+.lists-block .lists-item-list{
+	list-style:none;
+	padding: 0;
+	margin: 0;
+	border-top: 2px solid #d7dce0;
+    padding-top: 8px;
+}
+.lists-block .lists-item-list li{
+	line-height: 30px;
+	margin-bottom: 10px;
+    border-bottom: 2px solid #d7dce0;
+        padding-left: 15px;
+}
+.lists-block .lists-item-list li a{
+	font-size: 16px;
+    color: #000;
+    display: inline-block;
+    min-width: 175px;
+    border-right: 2px solid #d7dce0;
+    margin-right: 15px;
+    margin-bottom: 8px;
+}
+.lists-block .lists-item-list li span{
+
+}
+.right-bar {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    right: 0;
+    width: 70%;
+    background: #edf2f6;
+}
+.passwords-bar{
+	padding:15px 20px;
+}
+.passwords-title{
+	margin-bottom:15px;
+	font-weight: bold;
+	font-size: 20px;
+	color: #4e5a68;
+}
+.passwords-bar input[type="text"]{
+	height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    min-width: 175px;
+    width: 175px;
+}
+.passwords-bar input[type="submit"]{
+	height: 30px;
+    line-height: 25px;
+    vertical-align: top;
+    background: #f8f9fb;
+    border: 1px solid #dfe4e8;
+    border-radius: 8px;
+    padding: 0 15px;
+    margin-left: 13px;
+    font-weight: bold;
+    color: #4e5e6c;
+}
+.password-list{
+	    list-style: none;
+    margin: 0;
+    padding: 0px;
+}
+.password-list-item{
+	line-height: 30px;
+    border-bottom: 2px solid #d7dce0;
+    padding:0 5px;
+}
+.password-list-item.headers{
+	padding:5px;
+	background:#dce5ec;
+}
+.password-list-item span{
+	display:inline-block;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    min-width: 175px;
+}
+.password-list-item span.passRemove{
+	min-width:auto;
+	width:40px;
+	padding-left:15px;
+}
+.project-name {
+    line-height: 59px;
+    font-size: 24px;
+    padding: 0 32px;
+    background: #6f7e95;
+    border: none;
+    width: 100%;
+    color: #f7feff;
+}
+.project-name:focus{
+	background: #7f8fa9;
+    outline: none;
+}
+.todos-bar{
+	padding: 15px 20px;
+}
+.todos-title{
+	margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 20px;
+    color: #4e5a68;
+}
+.add-task{
+	margin-top:15px;
+}
+.add-task form{
+	margin-bottom:5px;
+}
+.add-task input[type="text"],.add-task select {
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    min-width: 175px;
+    width: 175px;
+    vertical-align:top;
+}
+.add-task input[type="submit"] {
+    height: 30px;
+    line-height: 25px;
+    vertical-align: top;
+    background: #f8f9fb;
+    border: 1px solid #dfe4e8;
+    border-radius: 8px;
+    padding: 0 15px;
+    margin-left: 13px;
+    font-weight: bold;
+    color: #4e5e6c;
+}
+.add-task input,.add-task select{
+	padding:0 5px;
+	line-height:26px;
+	font-size:16px;
+	height:30px;
+}
+.todo-item{
+	line-height: 30px;
+    border-bottom: 2px solid #d7dce0;
+    padding: 0 5px;
+}
+.todo-item.headers{
+    padding-left: 27px;
+}
+.todo-item input[type="text"], .todo-item select,.todo-item.headers span{
+	display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    min-width: 225px;
+}
+.todo-counter{
+	line-height:26px;
+	margin-bottom:5px;
+}
+.todo-item-list{
+	margin:0;
+	padding: 0;
+	list-style:none;
+
+}
+.todo-item-list li{
+	line-height: 40px;
+}
+.todo-item-list li input{
+	line-height: 40px;
+    padding: 0;
+    margin: 0;
+    height: 30px;
+    padding: 0 5px;
+    border:0;
+    background:transparent;
+    box-shadow:none;
+    color:#000;
+    font-size: 18px;
+}
+.todo-item-list li input:focus{
+	background:#fff;
+	box-shadow:0;
+	outline:0;
+}
+.todo-item-list li a{
+	color:blue;
+	font-size: 18px;
+}
+.todo-item-list li a:hover,.todo-item-list li a:focus{
+	text-decoration: none;
+}
+.user-prof-block{
+	padding:15px 20px;
+}
+.user-title{
+	margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 20px;
+    color: #4e5a68;
+}
+.user-prof{
+	    font-size: 18px;
+    line-height: 30px;
+}
+.user-prof span{
+	display:inline-block;
+	min-width:155px;
+}
+.user-list{
+	padding:15px 20px;
+}
+.user-list-block{
+	border-radius:3px;
+	padding:15px 20px;
+	background:#fbfbfb;
+}
+.user-list-item{
+	line-height:30px;
+	font-size: 18px;
+}
+.user-list-item-pos{}
+.user-list-item span.glyphicon{
+	margin-left:15px;
+}
+.added-user-block{
+	border-radius:3px;
+	padding:15px 20px;
+	background:#a8c8fb;
+	margin-bottom:10px;
+}
+.added-user-list{}
+.added-user-list span{}
+.user-list-title{
+	margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 20px;
+    color: #4e5a68;
+}
+.stat-block{
+	padding:15px 20px;
+}
+.stat-title{
+	margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 20px;
+    color: #4e5a68;
+}
+.stat-total-block{
+	padding:15px 20px;
+	border-radius:3px;
+	background:#fbfbfb;
+	margin-bottom:15px;
+}
+.stat-completed-block{
+	padding:15px 20px;
+	border-radius:3px;
+	background:#afff86;
+	margin-bottom:15px;
+}
+.stat-not-completed-block{
+	padding:15px 20px;
+	border-radius:3px;
+	background:#fffa6a;
+	margin-bottom:15px;
+}
+.stat-item{
+	font-weight: bold;
+	font-size: 18px;
+	vertical-align:middle;
+	line-height:50px;
+}
+.stat-item span{
+	text-align: center;
+	display:inline-block;
+	line-height:24px;
+	vertical-align:middle;
+	margin-left:10px;
+}
+.stat-diff{
+	font-weight: bold;
+	font-size: 18px;
+	vertical-align:middle;
+	line-height:50px;
+}
+.stat-diff span{
+	text-align: center;
+	display:inline-block;
+	line-height:24px;
+	vertical-align:middle;
+	margin-left:10px;
+}
+.checked{
+    background-color:#f0f0f0;
+    color:#666;
+}
+
+.checked [name=todoItem]{
+    text-decoration: line-through;
+}
+.checked .todoitem{
+	
+}
+.checked [name=todoItem],
+.checked [name=todoItem]:hover,
+.checked [name=todoItem]:focus{
+    background-color:#f0f0f0;
+}
+.todoItem{
+	border:0;
+	line-height:30px;
+}
+
+
+.form-block{
+	padding:30px;	
+}
+.form-block .form-control{
+	overflow:hidden;
+}
+.form-block span{
+	width:30%;
+	float:left;
+}
+.form-block input{
+	width:70%;
+	float:left;
+}
+.form-block input[type="submit"]{
+	width:auto;
+	float:none;
+	display:inline-block;
+
+}

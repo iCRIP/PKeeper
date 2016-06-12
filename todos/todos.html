@@ -1,0 +1,231 @@
+<head>
+  <title>Pkeeper</title>
+</head>
+
+<body>
+
+</body>
+
+
+
+
+
+<!--
+**
+**
+*     Tepmplates
+**
+**
+-->
+
+<template name="main">
+	<div class="top-bar">
+		PKeeper
+	</div>
+	{{> navigation}}
+	<div class="center-bar">
+	{{#if currentUser}}
+		{{> lists}}
+	{{/if}}
+	
+		{{> yield}}
+	</div>
+</template>
+<!-- todos -->
+<template name="todos">
+	<div class="todos-bar">
+		<div class="todos-title">
+			Задачи проекта
+		</div>
+		{{> addTodo}}
+		
+		{{#if todo}}
+		{{> todosCount}}
+	    <ul class="todo-item-list">
+	    	<li class="todo-item headers">
+	    		<span>Название задачи</span>
+	    		<span>Сложность задачи</span>
+	    		<span>Выполнить до</span>
+	    	</li>
+		    {{#each todo}}
+		        {{> todoItem}}
+		    {{/each}}
+	    </ul>
+	    {{else}}
+	    Нет задач в проекте
+	    {{/if}}
+    </div>
+</template>
+
+<template name="todoItem">
+	<li class="{{checked}}  todo-item">
+		<input type="checkbox" name="todoCheck" {{checked}}>
+		<input class="todoItem" type="text" value="{{name}}" name="todoItem" {{disabled}}>
+		<input class="todoItem" type="hidden" value="{{difficulity}}" name="hiddenDifficulity">
+			<select name="todoItemDifficulity" {{disabled}}>
+				
+				<option value="easy">Легко</option>
+				<option value="medium">Средне</option>
+				<option value="hard">Сложно</option>
+			</select>
+
+		<input class="todoItem" type="hidden" value="{{difficulity}}" name="hiddenDifficulity" {{disabled}}>
+		<input class="todoItem" type="text" value="{{deadlineDate}}" name="todoItemDeadline" {{disabled}}>
+		<a href="#" class="deleteTodo glyphicon glyphicon-remove-sign"></a>
+	</li>
+</template>
+
+<template name="addTodo">
+	<div class="add-task">
+		<form>
+			<input type="text" placeholder="Название задачи" name="todoName" required="required">
+			<select name="todoDifficulity">
+				<option value="" disabled="disabled" selected="selected">Сложность</option>
+				<option value="easy">Легко</option>
+				<option value="medium">Средне</option>
+				<option value="hard">Сложно</option>
+			</select>
+			<input type="text" placeholder="Выполнить до" name="deadline">
+			<input type="submit" value="Добавить задачу">
+		</form>
+	</div>
+</template>
+
+
+<template name="todosCount">
+	<div class="todo-counter">
+		Выполнено {{completedTodos}} из {{totalTodos}} задач.
+	</div>
+</template>
+<!-- todo end -->
+
+
+
+<!-- authentication -->
+<template name="register">
+	<div class="register-form form-block">
+		<h2>Регистрация</h2>
+		<form class="register">
+	        <div class="form-control"><span class="inputName">Email:</span> <input type="email" name="email"></div>
+	        <div class="form-control"><span class="inputName">Пароль:</span> <input type="password" name="password"></div>
+	        <div class="form-control"><span class="inputName">Имя</span> <input type="text" name="firstName"></div>
+	        <div class="form-control"><span class="inputName">Фамилия:</span> <input type="text" name="surName"></div>
+	        <div class="form-control"><span class="inputName">Компания:</span> <input type="text" name="company"></div>
+	        <div class="form-control"><span class="inputName">Позиция:</span> <input type="text" name="position"></div>
+	        <div class="text-center"><input type="submit" value="Регистрация"></div>
+	    </form>
+    </div>
+</template>
+<template name="login">
+	<div class="login-form form-block">
+		<h2>Авторизация</h2>
+
+		<form class="login">
+	        <div class="form-control"><span class="inputName">Email:</span> <input type="email" name="email"></div>
+	        <div class="form-control"><span class="inputName">Пароль:</span> <input type="password" name="password"></div>
+	        <div class="text-center"><input type="submit" value="Войти"></div>
+	    </form>
+    </div>
+</template>
+<!-- authentication -->
+
+
+<template name="home">
+	Добро пожаловать!
+</template>
+ 
+
+<template name="navigation">
+	<div class="left-bar">
+		<ul class="navigation">
+			{{#if currentUser}}
+	        <li><a href="#" class="passwords-link glyphicon glyphicon-flag"></a></li>
+	        <li><a href="#" class="todos-link active glyphicon glyphicon-tasks"></a></li>
+	        <li><a href="{{pathFor route='userlist'}}" class="userlist-link glyphicon glyphicon-user"></a></li>
+	        <li><a href="{{pathFor route='stat'}}" class="userlist-link glyphicon glyphicon-stats"></a></li>
+	        <li><a href="{{pathFor route='userprof'}}" class="userprof-link glyphicon glyphicon-cog"></a></li>
+	        <li><a href="#" class="logout glyphicon glyphicon-off"></a></li>
+		    {{else}} 
+		    <li><a href="{{pathFor route='register'}}" class="glyphicon glyphicon-edit"></a></li>
+		    <li><a href="{{pathFor route='login'}}" class="glyphicon glyphicon-check"></a></li>
+		    {{/if}}
+		</ul>
+	</div>
+</template>
+
+<!-- list -->
+<template name="addList">
+	<div class="add-list-form">
+		<form>
+			<input type="text" name="listName" value="" placeholder="Создать Проект">
+			<input type="submit" value="Создать">
+		</form>
+	</div>
+</template>
+
+<template name="listOfList">
+	<ul class="lists-item-list">
+		{{#each list}}
+			<li class="lists-item"><a href="{{pathFor route='listPage'}}">{{name}}</a><span class="deleteProject glyphicon glyphicon-remove-sign"></span></li>
+		{{/each}}
+	</ul>
+</template>
+
+<template name="lists">
+	<div class="lists-block">
+	<h2>Проекты</h2>
+	{{> addList }}
+	{{> listOfList }}
+	</div>
+</template>
+<template name="listPage">
+	<div class="right-bar">
+    {{#if name}}
+    <input class="project-name" value="{{name}}">
+    {{/if}}
+    	{{> yield region="rightBar"}}
+    </div>
+</template>
+<!-- lists -->
+<!-- passwords -->
+<template name="passwords">
+	<div class="passwords-bar">
+		<div class="passwords-title">Пароли проекта</div>
+		{{> addPassword}}
+		{{#if passwords}}
+		<ul class="password-list">
+			<li class="password-list-item headers">
+				<span class="passName">Пароль от</span>
+				<span class="passLogin">Логин</span>
+				<span class="passPass">Пароль</span>
+				<span class="passUrl">Ссылка</span>
+				<span class="passAddInfo">Дополнительная информация</span>
+			</li>
+			{{#each passwords}}
+				<li class="password-list-item">
+					<span class="passName">{{passName}}</span>
+					<span class="passLogin">{{passLogin}}</span>
+					<span class="passPass">{{passPass}}</span>
+					<span class="passUrl">{{passUrl}}</span>
+					<span class="passAddInfo">{{passAddInfo}}</span>
+					<span class="passRemove glyphicon glyphicon-remove-sign"></span>
+				</li>
+			{{/each}}
+		</ul>
+			{{else}}
+			<ul class="password-list">
+				<li class="password-list-item"><span>Нет паролей к проекту</span></li>
+			</ul>
+		{{/if}}
+	</div>
+</template>
+<template name="addPassword">
+	<form>
+		<input type="text" name="passName" placeholder="Пароль от">
+		<input type="text" name="passLogin" placeholder="Логин">
+		<input type="text" name="passPass" placeholder="Пароль">
+		<input type="text" name="passUrl" placeholder="Ссылка на страницу входа">
+		<input type="text" name="passAddInfo" placeholder="Дополнительная информация">
+		<input type="submit" value="Добавить пароль">
+	</form>
+</template>

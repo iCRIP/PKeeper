@@ -1,0 +1,53 @@
+<template name="userlist">
+<div class="user-list">
+{{> addedUserList}}
+	<div class="user-list-block">
+		<span class="user-list-title">Все пользователи компании</span> <br>
+		{{#each usersList}}
+			{{> userListItem}}
+		{{/each}}
+	</div>
+</div>
+</template>
+<template name="userListItem">
+	
+		<div class="user-list-item">
+			
+			<span class="user-list-item-name">
+				{{profile.firstname}} {{profile.secondname}}
+			</span>
+			<span class="user-list-item-name">
+				{{email}}
+			</span>
+			<span class="user-list-item-pos">
+				[{{profile.position}}]
+			</span>	
+			<span class="glyphicon glyphicon-plus add-to-project"></span>
+		</div>
+
+</template>
+
+
+<template name="addedUserList">
+	<div class="added-user-block">
+		<span class="user-list-title">Добавленные к проекту пользователи</span>
+		<div class="added-user-list">
+			{{#each addedToProjectUsers}}
+				{{> addedUserListItem}}
+			{{/each}}
+		</div>
+	</div>
+</template>
+
+<template name="addedUserListItem">
+	<div class="user-list-item">
+		
+		<span class="user-list-item-name">
+			{{profile.firstname}} {{profile.secondname}}
+		</span>
+		<span class="user-list-item-com">
+			[{{profile.position}}]
+		</span>	
+		<span class="glyphicon glyphicon-minus remove-to-project"></span>
+	</div>
+</template>

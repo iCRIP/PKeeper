@@ -1,0 +1,33 @@
+<template name="stat">
+	
+	<div class="stat-block">
+		<div class="stat-title">Статистика задач по проекту</div>
+		<div class="stat-total-block">
+			<div class="stat-item">Поставлено задач: <span class="stat-total">{{totalTodos.total}}</span></div>
+			<div class="stat-diff">
+				Из них: 
+				<span class="stat-easy">Легкие<br>{{totalTodos.easy}}</span>
+				<span class="stat-easy">Средние<br>{{totalTodos.medium}}</span>
+				<span class="stat-easy">Сложные<br>{{totalTodos.hard}}</span>
+			</div>
+		</div>
+		<div class="stat-completed-block">
+			<div class="stat-item">Выполнено задач: <span class="stat-total">{{completedTodos.total}}</span></div>
+			<div class="stat-diff">
+				Из них: 
+				<span class="stat-easy">Легкие<br>{{completedTodos.easy}}</span>
+				<span class="stat-easy">Средние<br>{{completedTodos.medium}}</span>
+				<span class="stat-easy">Сложные<br>{{completedTodos.hard}}</span>
+			</div>
+		</div>
+		<div class="stat-not-completed-block">
+			<div class="stat-item">Невыполнено задач: <span class="stat-total">{{notcompletedTodos.total}}</span></div>
+			<div class="stat-diff">
+				Из них: 
+				<span class="stat-easy">Легкие<br>{{notcompletedTodos.easy}}</span>
+				<span class="stat-easy">Средние<br>{{notcompletedTodos.medium}}</span>
+				<span class="stat-easy">Сложные<br>{{notcompletedTodos.hard}}</span>
+			</div>
+		</div>
+	</div>
+</template>
